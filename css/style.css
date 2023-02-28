@@ -7,24 +7,40 @@ html {
 *:after {
     box-sizing: inherit;
     /* remove the margin from all elements */
-
+    margin: 0;
 }
 
 /* add margin-top to all elements only if they are preceded by a sibling element */
+p,h1 + * {
+    margin-top: 2rem;
+  }
 
 body {
     /* give a minimum height of 100vh */
+    min-height: 100vh;
     /* Give some whitespace to the inside */
-
+    padding: 2rem;
     /* Align everyting to the center with flexbox and set some whitespace */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     /* Set the font family to bookmania */
+    font-size: bookmania 'sans-serif';
+    
     /* Set the font size so that it's twice the root font size */
+    font-size: 2rem;
+
     /* Set the font weight to Light */
+    font-weight: light;
     /* Make sure the text has Ligatures, Discretionary ligiatures, stylistic set 04, 08 & 10 enabled */
+    font-variant-ligatures: common-ligatures,Discretionary-ligatures;
+    font-feature-settings: 'ss04','ss08','ss10' on;
 
     /* Set the line height to something higher than 1 */
+    line-height: 2.5rem;
     /* Set the background to oldlace */
+    background-color: oldlace;
 
     /* anti-aliasing */
     -webkit-font-smoothing: antialiased;
@@ -33,7 +49,9 @@ body {
 
 /* Set the H1 to italics and make sure all first letters start with a capital */
 
-h1 {}
+h1::first-letter{
+    text-transform: uppercase;
+}
 
 /* Use specific classes to specify certain stylistic alternates */
 /* Use them on charactes you want to change with a span tag around the letter  */
@@ -44,4 +62,7 @@ h1 {}
 
 /* Set the footer to small caps and all uppercases to small caps */
 
-footer {}
+footer{
+
+    font-variant-caps: all-small-caps;
+}
